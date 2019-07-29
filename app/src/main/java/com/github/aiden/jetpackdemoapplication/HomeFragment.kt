@@ -8,7 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
+import com.github.aiden.jetpackdemoapplication.databinding.FragmentHomeBinding
 import kotlinx.android.synthetic.main.fragment_home.*
+
+
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -21,13 +24,14 @@ private const val ARG_PARAM2 = "param2"
  *
  */
 class HomeFragment : Fragment() {
+    private lateinit var homeBinding: FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        homeBinding = FragmentHomeBinding.inflate(inflater, container, false)
+        return homeBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -58,6 +62,12 @@ class HomeFragment : Fragment() {
             bdl.putString("args", "register...")
             findNavController().navigate(R.id.register, bdl, navOptions)
         }
+//        val bean = HomeEntity()
+//        bean.age = 12
+//        bean.name = "李磊"
+//        bean.des = "三好学生"
+//        homeBinding.homebean = bean
+        homeBinding.tvDatabind.text = "覆盖值"
     }
 
 
