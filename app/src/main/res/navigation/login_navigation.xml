@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            app:startDestination="@id/home"
+            android:id="@+id/login_navigation">
+    <fragment android:id="@+id/login"
+              android:label="LoginFragment"
+              android:name="com.github.aiden.jetpackdemoapplication.LoginFragment"
+              tools:layout="@layout/fragment_login">
+        <!--<action app:destination="@id/home" -->
+    </fragment>
+    <fragment android:id="@+id/register"
+              android:label="RegisterFragment"
+              android:name="com.github.aiden.jetpackdemoapplication.RegisterFragment"
+              tools:layout="@layout/fragment_register"/>
+    <fragment android:id="@+id/home"
+              android:label="HomeFragment"
+              android:name="com.github.aiden.jetpackdemoapplication.HomeFragment"
+              tools:layout="@layout/fragment_home"/>
+
+</navigation>
